@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tonneru", "Tonneru\Tonneru.csproj", "{3030F8CF-EDE7-4046-B736-6F1870C54885}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3030F8CF-EDE7-4046-B736-6F1870C54885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3030F8CF-EDE7-4046-B736-6F1870C54885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3030F8CF-EDE7-4046-B736-6F1870C54885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3030F8CF-EDE7-4046-B736-6F1870C54885}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
