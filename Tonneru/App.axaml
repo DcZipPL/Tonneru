@@ -9,4 +9,8 @@
     <Application.Styles>
         <FluentTheme Mode="Dark"/>
     </Application.Styles>
+    
+    <Application.Resources>
+        <FontFamily x:Key="Lucide">avares://Tonneru/Assets/Fonts/lucide.ttf#lucide</FontFamily>
+    </Application.Resources>
 </Application>
