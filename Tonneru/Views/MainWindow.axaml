@@ -31,7 +31,7 @@
                 <TextBlock Text="{Binding RemotePort}"/>
             </StackPanel>
             <Button Content="{Binding ConnectText}" Command="{Binding TryConnectCommand}"/>
-            <Button FontFamily="{StaticResource Lucide}" Command="{Binding ToggleEditCommand}" IsEnabled="{Binding CanEdit}"></Button>
+            <Button FontFamily="{StaticResource Lucide}" Command="{Binding ToggleEditCommand}"></Button>
         </StackPanel>
         <Panel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="#12ffffff">
             <StackPanel Margin="24, 24" Spacing="12">
@@ -69,7 +69,7 @@
                         Password
                     </Label>
                     <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding Username}" IsEnabled="{Binding CanEdit}"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Password}" IsEnabled="{Binding CanEdit}" Margin="12,0,0,0"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Password}" IsEnabled="{Binding CanEdit}" Margin="12,0,0,0" PasswordChar="•"/>
                 </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>

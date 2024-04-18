@@ -1,12 +1,14 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Reactive;
 using System.Threading.Tasks;
 using Avalonia.Media;
 using ReactiveUI;
 using Renci.SshNet;
 using Renci.SshNet.Common;
-using Color = System.Drawing.Color;
+using Tomlyn;
+using Tonneru.Models;
 
 namespace Tonneru.ViewModels
 {
@@ -44,6 +46,29 @@ namespace Tonneru.ViewModels
 		
 		public MainWindowViewModel()
 		{
+			if (File.Exists("tunnel.toml"))
+			{
+				try
+				{
+					var toml = File.ReadAllText("tunnel.toml");
+					var model = Toml.ToModel<Configuration>(toml);
+					this.Host = model.Ssh!.Host;
+					this.Port = model.Ssh!.Port;
+					this.Username = model.Ssh!.Username;
+					this.Password = model.Ssh!.Password;
+					this.BoundHost = model.Tunnel!.LocalHost;
+					this.RemoteHost = model.Tunnel!.RemoteHost;
+					this.LocalPort = model.Tunnel!.LocalPort;
+					this.RemotePort = model.Tunnel!.RemotePort;
+				}
+				catch (Exception e)
+				{
+					Console.WriteLine(e);
+					ConnectionError = e.Message;
+					Status = ConnectionStatus.Error;
+				}
+			}
+			
 			TryConnectCommand = ReactiveCommand.Create(TryConnect);
 			ToggleEditCommand = ReactiveCommand.Create(ToggleEdit);
 		}
@@ -175,6 +200,7 @@ namespace Tonneru.ViewModels
 					Status = ConnectionStatus.Active;
 					client.AddForwardedPort(portForwarder);
 					Console.WriteLine("Port Forwarding Started!");
+					portForwarder.Start();
 					if (forceDisconnect)
 					{
 						Disconnect();
