@@ -26,9 +26,9 @@
         </StackPanel>
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="24, 0" Grid.Column="1" Spacing="12">
             <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
-                <TextBlock Text="{Binding LocalPort}"/>
-                <TextBlock>-></TextBlock>
                 <TextBlock Text="{Binding RemotePort}"/>
+                <TextBlock>-></TextBlock>
+                <TextBlock Text="{Binding LocalPort}"/>
             </StackPanel>
             <Button Content="{Binding ConnectText}" Command="{Binding TryConnectCommand}"/>
             <Button FontFamily="{StaticResource Lucide}" Command="{Binding ToggleEditCommand}"></Button>
