@@ -56,7 +56,7 @@ namespace Tonneru.ViewModels
 					this.Port = model.Ssh!.Port;
 					this.Username = model.Ssh!.Username;
 					this.Password = model.Ssh!.Password;
-					this.BoundHost = model.Tunnel!.LocalHost;
+					this.LocalHost = model.Tunnel!.LocalHost;
 					this.RemoteHost = model.Tunnel!.RemoteHost;
 					this.LocalPort = model.Tunnel!.LocalPort;
 					this.RemotePort = model.Tunnel!.RemotePort;
@@ -155,7 +155,7 @@ namespace Tonneru.ViewModels
 		{
 			client = new SshClient(Host, (ushort)Port, Username, Password);
 			client.ErrorOccurred += OnError;
-			portForwarder = new ForwardedPortRemote(BoundHost, (ushort)LocalPort, RemoteHost, (ushort)RemotePort);
+			portForwarder = new ForwardedPortRemote(RemoteHost, (ushort)RemotePort, LocalHost, (ushort)LocalPort);
 		}
 
 		public void Connect()
@@ -272,7 +272,7 @@ namespace Tonneru.ViewModels
 			set => this.RaiseAndSetIfChanged(ref _password, value);
 		}
 		
-		public string BoundHost
+		public string LocalHost
 		{
 			get => _boundHost;
 			set => this.RaiseAndSetIfChanged(ref _boundHost, value);
