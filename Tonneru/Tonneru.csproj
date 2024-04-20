@@ -7,6 +7,10 @@
         <TrimMode>copyused</TrimMode>
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
         <ApplicationIcon>Assets\tunnel.ico</ApplicationIcon>
+        <AssemblyVersion>1.1.0</AssemblyVersion>
+        <FileVersion>1.1.0</FileVersion>
+        <NeutralLanguage>en</NeutralLanguage>
+        <Company>PrefexDev</Company>
     </PropertyGroup>
     <ItemGroup>
         <AvaloniaResource Include="Assets\**"/>

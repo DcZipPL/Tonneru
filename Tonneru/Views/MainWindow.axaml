@@ -6,7 +6,7 @@
         mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="180"
         x:Class="Tonneru.Views.MainWindow"
         Icon="/Assets/tunnel.ico"
-        Title="Tonneru" Width="{Binding Width}" Height="{Binding Height}" MaxHeight="400" MinHeight="80">
+        Title="Tonneru" Width="{Binding Width}" Height="{Binding Height}" MaxHeight="436" MinHeight="80">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
@@ -31,7 +31,7 @@
                 <TextBlock Text="{Binding RemotePort}"/>
             </StackPanel>
             <Button Content="{Binding ConnectText}" Command="{Binding TryConnectCommand}"/>
-            <Button FontFamily="{StaticResource Lucide}" Command="{Binding ToggleEditCommand}"></Button>
+            <Button FontFamily="{StaticResource Lucide}" Command="{Binding ToggleEditCommand}">&#xE1F7;</Button>
         </StackPanel>
         <Panel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="#12ffffff">
             <StackPanel Margin="24, 24" Spacing="12">
@@ -107,6 +107,15 @@
                     <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding RemoteHost}" IsEnabled="{Binding CanEdit}" VerticalAlignment="Top"/>
                     <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding RemotePort}" IsEnabled="{Binding CanEdit}" Margin="12,0,0,0" Width="96" KeyDown="HandlePortInput"/>
                 </Grid>
+                <StackPanel Orientation="Horizontal" Spacing="12">
+                    <Button Margin="0, 12" Command="{Binding SaveConfigCommand}">
+                        <StackPanel Orientation="Horizontal" Spacing="6">
+                            <TextBlock FontFamily="{StaticResource Lucide}" Text="&#xE4E9;"/>
+                            <TextBlock Text="Save to tunnel.toml"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Content="&#xE28E;" Margin="0, 12" FontFamily="{StaticResource Lucide}" ToolTip.Tip="Clear all" Command="{Binding ClearCommand}" IsEnabled="{Binding CanEdit}"/>
+                </StackPanel>
             </StackPanel>
         </Panel>
     </Grid>

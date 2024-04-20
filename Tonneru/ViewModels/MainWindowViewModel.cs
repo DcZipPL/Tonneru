@@ -14,7 +14,7 @@ namespace Tonneru.ViewModels
 {
 	public class MainWindowViewModel : ViewModelBase
 	{
-		private const uint OPEN_HEIGHT = 400;
+		private const uint OPEN_HEIGHT = 436;
 		private const uint COLLAPSED_HEIGHT = 80;
 		
 		private SshClient? client;
@@ -41,8 +41,10 @@ namespace Tonneru.ViewModels
 		}
 		private string ConnectionError { get; set; } = string.Empty;
 
-		public ReactiveCommand<Unit, Unit> TryConnectCommand { get; } 
-		public ReactiveCommand<Unit, Unit> ToggleEditCommand { get; } 
+		public ReactiveCommand<Unit, Unit> TryConnectCommand { get; }
+		public ReactiveCommand<Unit, Unit> ToggleEditCommand { get; }
+		public ReactiveCommand<Unit, Unit> SaveConfigCommand { get; }
+		public ReactiveCommand<Unit, Unit> ClearCommand { get; }
 		
 		public MainWindowViewModel()
 		{
@@ -71,6 +73,8 @@ namespace Tonneru.ViewModels
 			
 			TryConnectCommand = ReactiveCommand.Create(TryConnect);
 			ToggleEditCommand = ReactiveCommand.Create(ToggleEdit);
+			SaveConfigCommand = ReactiveCommand.Create(SaveConfig);
+			ClearCommand = ReactiveCommand.Create(Clear);
 		}
 		
 		public bool CanEdit => Status == ConnectionStatus.Disconnect || Status == ConnectionStatus.Error;
@@ -150,12 +154,48 @@ namespace Tonneru.ViewModels
 				Height = COLLAPSED_HEIGHT;
 			}
 		}
+		
+		public void SaveConfig()
+		{
+			var config = new Configuration
+			{
+				Ssh = new Configuration.SshTable
+				{
+					Host = Host,
+					Port = Port,
+					Username = Username,
+					Password = Password
+				},
+				Tunnel = new Configuration.TunnelTable
+				{
+					LocalHost = LocalHost,
+					RemoteHost = RemoteHost,
+					LocalPort = LocalPort,
+					RemotePort = RemotePort
+				}
+			};
+			var toml = Toml.FromModel(config);
+			File.WriteAllText("tunnel.toml", toml);
+		}
 
-		public void CreateClient()
+		public void Clear()
+		{
+			this.Host = "";
+			this.Port = 0;
+			this.Username = "";
+			this.Password = "";
+			this.LocalHost = "";
+			this.RemoteHost = "";
+			this.LocalPort = 0;
+			this.RemotePort = 0;
+		}
+
+		public SshClient CreateClient()
 		{
 			client = new SshClient(Host, (ushort)Port, Username, Password);
 			client.ErrorOccurred += OnError;
 			portForwarder = new ForwardedPortRemote(RemoteHost, (ushort)RemotePort, LocalHost, (ushort)LocalPort);
+			return client;
 		}
 
 		public void Connect()
@@ -169,8 +209,7 @@ namespace Tonneru.ViewModels
 		{
 			try
 			{
-				CreateClient();
-				client.Connect();
+				CreateClient().Connect();
 				Console.WriteLine("Connected!");
 			}
 			catch (ArgumentException e)
