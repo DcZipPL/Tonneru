@@ -3,6 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:Tonneru.ViewModels"
+        xmlns:controls="clr-namespace:Tonneru.Views.Controls"
         mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="350"
         x:Class="Tonneru.Views.PreferencesWindow"
         Icon="/Assets/tunnel.ico"
@@ -12,10 +13,24 @@
                 <vm:PreferencesWindowViewModel/>
         </Design.DataContext>
         
-        <StackPanel Margin="12">
-                <Label Target="LanguageBox" Content="Language"/>
-                <ComboBox x:Name="LanguageBox" PlaceholderText="Language" PlaceholderForeground="#888"/>
-                <Label Target="ThemeBox" Content="Theme" Margin="0,12, 0, 0" IsEnabled="False"/>
-                <ComboBox x:Name="ThemeBox" PlaceholderText="Theme" PlaceholderForeground="#888" IsEnabled="False"/>
-        </StackPanel>
+        <Panel Margin="12">
+                <StackPanel>
+                        <Label Target="LanguageBox" Content="Language"/>
+                        <ComboBox x:Name="LanguageBox" PlaceholderText="Language" PlaceholderForeground="#888"/>
+                        <Label Target="ThemeBox" Content="Theme" Margin="0,12, 0, 0" IsEnabled="False"/>
+                        <ComboBox x:Name="ThemeBox" PlaceholderText="Theme" PlaceholderForeground="#888" IsEnabled="False"/>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Bottom" Spacing="6">
+                        <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 12">
+                                <TextBlock FontFamily="{StaticResource Lucide}" Text="&#xE097;" Margin="0, 0, 6, 0"/>
+                                <controls:Hyperlink Link="https://ko-fi.com/prefexdev">
+                                        Support me on Ko-fi
+                                </controls:Hyperlink>
+                        </StackPanel>
+                        <controls:Hyperlink Content="Report an issue" Link="https://github.com/DcZipPL/Tonneru/issues"/>
+                        <controls:Hyperlink Content="View source code on GitHub" Link="https://github.com/DcZipPL/Tonneru"/>
+                        <controls:Hyperlink Content="See more of my software on prefex.dev" Link="https://prefex.dev/"/>
+                        <TextBlock>Prefex .DEV © 2024</TextBlock>
+                </StackPanel>
+        </Panel>
 </Window>
