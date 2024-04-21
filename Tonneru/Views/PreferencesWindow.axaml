@@ -1,0 +1,21 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Tonneru.ViewModels"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="350"
+        x:Class="Tonneru.Views.PreferencesWindow"
+        Icon="/Assets/tunnel.ico"
+        Title="Tonneru: Preferences"
+        Height="300" Width="350">
+        <Design.DataContext>
+                <vm:PreferencesWindowViewModel/>
+        </Design.DataContext>
+        
+        <StackPanel Margin="12">
+                <Label Target="LanguageBox" Content="Language"/>
+                <ComboBox x:Name="LanguageBox" PlaceholderText="Language" PlaceholderForeground="#888"/>
+                <Label Target="ThemeBox" Content="Theme" Margin="0,12, 0, 0" IsEnabled="False"/>
+                <ComboBox x:Name="ThemeBox" PlaceholderText="Theme" PlaceholderForeground="#888" IsEnabled="False"/>
+        </StackPanel>
+</Window>

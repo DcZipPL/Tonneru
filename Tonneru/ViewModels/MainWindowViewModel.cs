@@ -10,6 +10,7 @@ using Renci.SshNet;
 using Renci.SshNet.Common;
 using Tomlyn;
 using Tonneru.Models;
+using Tonneru.Views;
 
 namespace Tonneru.ViewModels
 {
@@ -339,5 +340,7 @@ namespace Tonneru.ViewModels
 		{
 			new ComboBoxItem() { Content = "Profile 1" },
 		};
+
+		public void OpenPreferences() => PreferencesWindow.OpenPreferences();
 	}
 }

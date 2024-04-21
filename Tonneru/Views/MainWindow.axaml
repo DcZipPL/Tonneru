@@ -32,7 +32,7 @@
                 <TextBlock Text="{Binding RemotePort}"/>
             </StackPanel>
             <Button Content="{Binding ConnectText}" Command="{Binding TryConnectCommand}"/>
-            <Button FontFamily="{StaticResource Lucide}" Command="{Binding ToggleEditCommand}">&#xE1F7;</Button>
+            <ToggleButton FontFamily="{StaticResource Lucide}" Command="{Binding ToggleEditCommand}">&#xE1F7;</ToggleButton>
         </StackPanel>
         <Panel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="#12ffffff">
             <StackPanel Margin="24, 24" Spacing="12">
@@ -111,8 +111,8 @@
                 <Panel Margin="0, 12">
                     <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Left">
                         <controls:IconButton Icon="&#xE4E9;" Content="Save profile" Command="{Binding SaveConfigCommand}"/>
-                        <controls:IconButton Icon="&#xE4E9;" Command="{Binding SaveConfigCommand}"/>
-                        <Button Content="&#xE28E;" FontFamily="{StaticResource Lucide}" ToolTip.Tip="Clear all" Command="{Binding ClearCommand}" IsEnabled="{Binding CanEdit}"/>
+                        <controls:IconButton Icon="&#xE28E;" ToolTip.Tip="Clear all" Command="{Binding ClearCommand}" IsEnabled="{Binding CanEdit}"/>
+                        <controls:IconButton Icon="&#xE244;" ToolTip.Tip="Preferences" Command="{Binding OpenPreferences}"/>
                     </StackPanel>
                     <ComboBox Items="{Binding ProfileItems}" HorizontalAlignment="Right"/>
                 </Panel>
