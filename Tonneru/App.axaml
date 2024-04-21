@@ -8,6 +8,7 @@
 
     <Application.Styles>
         <FluentTheme Mode="Dark"/>
+        <StyleInclude Source="avares://Tonneru/Views/Controls/Hyperlink.axaml"/>
         <StyleInclude Source="avares://Tonneru/Views/Controls/IconButton.axaml"/>
     </Application.Styles>
     

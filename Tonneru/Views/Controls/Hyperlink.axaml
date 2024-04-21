@@ -1,0 +1,39 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:Tonneru.Views.Controls">
+    <Design.PreviewWith>
+        <controls:Hyperlink/>
+    </Design.PreviewWith>
+
+    <Style Selector="controls|Hyperlink">
+        <!-- Set Defaults -->
+        <Setter Property="Template">
+            <ControlTemplate TargetType="Button">
+                <Button>
+                    <TextBlock Text="{TemplateBinding Content}"/>
+                    <Button.Styles>
+                        <Style Selector="Button">
+                            <Setter Property="Padding" Value="0"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="#008AEE"/>
+                        </Style>
+                        <Style Selector="Button:pointerover > TextBlock">
+                            <Setter Property="Foreground" Value="#00B1EE"/>
+                        </Style>
+                        <Style Selector="Button:pressed > TextBlock">
+                            <Setter Property="Foreground" Value="#00DCFF"/>
+                        </Style>
+                        <Style Selector="Button:pointerover /template/ ContentPresenter">
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Style>
+                        <Style Selector="Button:pressed /template/ ContentPresenter">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </Style>
+                    </Button.Styles>
+                </Button>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+</Styles>
