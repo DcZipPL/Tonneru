@@ -107,15 +107,18 @@
                     <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding RemoteHost}" IsEnabled="{Binding CanEdit}" VerticalAlignment="Top"/>
                     <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding RemotePort}" IsEnabled="{Binding CanEdit}" Margin="12,0,0,0" Width="96" KeyDown="HandlePortInput"/>
                 </Grid>
-                <StackPanel Orientation="Horizontal" Spacing="12">
-                    <Button Margin="0, 12" Command="{Binding SaveConfigCommand}">
-                        <StackPanel Orientation="Horizontal" Spacing="6">
-                            <TextBlock FontFamily="{StaticResource Lucide}" Text="&#xE4E9;"/>
-                            <TextBlock Text="Save to tunnel.toml"/>
-                        </StackPanel>
-                    </Button>
-                    <Button Content="&#xE28E;" Margin="0, 12" FontFamily="{StaticResource Lucide}" ToolTip.Tip="Clear all" Command="{Binding ClearCommand}" IsEnabled="{Binding CanEdit}"/>
-                </StackPanel>
+                <Panel Margin="0, 12">
+                    <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Left">
+                        <Button Command="{Binding SaveConfigCommand}">
+                            <StackPanel Orientation="Horizontal" Spacing="6">
+                                <TextBlock FontFamily="{StaticResource Lucide}" Text="&#xE4E9;"/>
+                                <TextBlock Text="Save profile"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Content="&#xE28E;" FontFamily="{StaticResource Lucide}" ToolTip.Tip="Clear all" Command="{Binding ClearCommand}" IsEnabled="{Binding CanEdit}"/>
+                    </StackPanel>
+                    <ComboBox Items="{Binding ProfileItems}" HorizontalAlignment="Right"/>
+                </Panel>
             </StackPanel>
         </Panel>
     </Grid>

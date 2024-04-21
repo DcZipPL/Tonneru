@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Reactive;
 using System.Threading.Tasks;
+using Avalonia.Controls;
 using Avalonia.Media;
 using ReactiveUI;
 using Renci.SshNet;
@@ -333,5 +334,10 @@ namespace Tonneru.ViewModels
 			get => _remotePort;
 			set => this.RaiseAndSetIfChanged(ref _remotePort, value);
 		}
+
+		public ComboBoxItem[] ProfileItems => new[]
+		{
+			new ComboBoxItem() { Content = "Profile 1" },
+		};
 	}
 }
