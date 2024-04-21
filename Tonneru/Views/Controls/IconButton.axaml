@@ -10,7 +10,7 @@
         <Setter Property="Template">
             <ControlTemplate TargetType="Button">
                 <Button>
-                    <StackPanel Orientation="Horizontal" Spacing="6">
+                    <StackPanel Orientation="Horizontal" Spacing="{TemplateBinding Spacing}">
                         <TextBlock FontFamily="{StaticResource Lucide}" Text="{TemplateBinding Icon}"/>
                         <TextBlock Text="{TemplateBinding Content}"/>
                     </StackPanel>

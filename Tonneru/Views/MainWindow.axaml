@@ -111,6 +111,7 @@
                 <Panel Margin="0, 12">
                     <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Left">
                         <controls:IconButton Icon="&#xE4E9;" Content="Save profile" Command="{Binding SaveConfigCommand}"/>
+                        <controls:IconButton Icon="&#xE4E9;" Command="{Binding SaveConfigCommand}"/>
                         <Button Content="&#xE28E;" FontFamily="{StaticResource Lucide}" ToolTip.Tip="Clear all" Command="{Binding ClearCommand}" IsEnabled="{Binding CanEdit}"/>
                     </StackPanel>
                     <ComboBox Items="{Binding ProfileItems}" HorizontalAlignment="Right"/>

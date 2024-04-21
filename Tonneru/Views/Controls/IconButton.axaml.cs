@@ -1,6 +1,5 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Primitives;
 
 namespace Tonneru.Views.Controls;
 
@@ -12,5 +11,23 @@ public class IconButton : Button
 	{
 		get => GetValue(IconProperty);
 		set => SetValue(IconProperty, value);
+	}
+	
+	public static readonly DirectProperty<IconButton, double> SpacingProperty =
+		AvaloniaProperty.RegisterDirect<IconButton, double>(
+			nameof(Spacing),
+			o => o.Spacing,
+			(o, v) => o.Spacing = v,
+			6);
+	private double _spacing = 6;
+	public double Spacing
+	{
+		get
+		{
+			if (Content is null or "" or TextBlock { Text: null or "" })
+				return 0;
+			return _spacing;
+		}
+		private set => SetAndRaise(SpacingProperty, ref _spacing, value);
 	}
 }
