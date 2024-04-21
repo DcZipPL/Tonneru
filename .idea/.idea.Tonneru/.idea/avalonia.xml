@@ -4,6 +4,8 @@
     <option name="projectPerEditor">
       <map>
         <entry key="Tonneru/App.axaml" value="Tonneru/Tonneru.csproj" />
+        <entry key="Tonneru/Controls/IconButton.axaml" value="Tonneru/Tonneru.csproj" />
+        <entry key="Tonneru/Views/Controls/IconButton.axaml" value="Tonneru/Tonneru.csproj" />
         <entry key="Tonneru/Views/MainWindow.axaml" value="Tonneru/Tonneru.csproj" />
       </map>
     </option>

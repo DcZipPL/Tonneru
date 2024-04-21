@@ -3,6 +3,7 @@
         xmlns:vm="using:Tonneru.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:Tonneru.Views.Controls"
         mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="180"
         x:Class="Tonneru.Views.MainWindow"
         Icon="/Assets/tunnel.ico"
@@ -109,12 +110,7 @@
                 </Grid>
                 <Panel Margin="0, 12">
                     <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Left">
-                        <Button Command="{Binding SaveConfigCommand}">
-                            <StackPanel Orientation="Horizontal" Spacing="6">
-                                <TextBlock FontFamily="{StaticResource Lucide}" Text="&#xE4E9;"/>
-                                <TextBlock Text="Save profile"/>
-                            </StackPanel>
-                        </Button>
+                        <controls:IconButton Icon="&#xE4E9;" Content="Save profile" Command="{Binding SaveConfigCommand}"/>
                         <Button Content="&#xE28E;" FontFamily="{StaticResource Lucide}" ToolTip.Tip="Clear all" Command="{Binding ClearCommand}" IsEnabled="{Binding CanEdit}"/>
                     </StackPanel>
                     <ComboBox Items="{Binding ProfileItems}" HorizontalAlignment="Right"/>

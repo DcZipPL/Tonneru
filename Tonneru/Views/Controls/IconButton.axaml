@@ -1,0 +1,21 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:Tonneru.Views.Controls">
+    <Design.PreviewWith>
+        <controls:IconButton />
+    </Design.PreviewWith>
+
+    <Style Selector="controls|IconButton">
+        <!-- Set Defaults -->
+        <Setter Property="Template">
+            <ControlTemplate TargetType="Button">
+                <Button>
+                    <StackPanel Orientation="Horizontal" Spacing="6">
+                        <TextBlock FontFamily="{StaticResource Lucide}" Text="{TemplateBinding Icon}"/>
+                        <TextBlock Text="{TemplateBinding Content}"/>
+                    </StackPanel>
+                </Button>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+</Styles>
