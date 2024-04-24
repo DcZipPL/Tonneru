@@ -1,6 +1,6 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
+using Tonneru.ViewModels;
 
 namespace Tonneru.Views;
 
@@ -13,8 +13,18 @@ public partial class PreferencesWindow : Window
 	
 	public static PreferencesWindow OpenPreferences()
 	{
-		var window = new PreferencesWindow();
+		var window = new PreferencesWindow
+		{
+			DataContext = new PreferencesWindowViewModel()
+		};
 		window.Show();
 		return window;
+	}
+
+	private void ChangeLanguage(object? sender, AvaloniaPropertyChangedEventArgs e)
+	{
+		if (DataContext is not PreferencesWindowViewModel model)
+			return;
+		model.ApplyCulture();
 	}
 }

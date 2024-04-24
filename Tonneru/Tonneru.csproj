@@ -33,4 +33,29 @@
         <PackageReference Include="Tomlyn" Version="0.17.0" />
         <PackageReference Include="XamlNameReferenceGenerator" Version="1.3.4"/>
     </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Assets\Language\" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Update="Included\Resources.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+      <EmbeddedResource Update="Assets\Resources.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Update="Included\Resources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Resources.resx</DependentUpon>
+      </Compile>
+      <Compile Update="Assets\Resources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Resources.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
 </Project>

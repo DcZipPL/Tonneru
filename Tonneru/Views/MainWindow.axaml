@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:controls="clr-namespace:Tonneru.Views.Controls"
+        xmlns:lang="clr-namespace:Tonneru.Assets"
         mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="180"
         x:Class="Tonneru.Views.MainWindow"
         Icon="/Assets/tunnel.ico"
@@ -81,12 +82,8 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Grid.Column="0">
-                        Local Host
-                    </Label>
-                    <Label Grid.Row="0" Grid.Column="1" Margin="12,0,0,0">
-                        Local Port
-                    </Label>
+                    <Label Grid.Row="0" Grid.Column="0" Content="{x:Static lang:Resources.tunnel_local_host}"/>
+                    <Label Grid.Row="0" Grid.Column="1" Margin="12,0,0,0" Content="{x:Static lang:Resources.tunnel_local_port}"/>
                     <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding LocalHost}" IsEnabled="{Binding CanEdit}" VerticalAlignment="Top"/>
                     <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding LocalPort}" Margin="12,0,0,0" Width="96" IsEnabled="{Binding CanEdit}" KeyDown="HandlePortInput"/>
                 </Grid>
@@ -99,22 +96,35 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Label Grid.Row="0" Grid.Column="0">
-                        Remote Host
-                    </Label>
-                    <Label Grid.Row="0" Grid.Column="1" Margin="12,0,0,0">
-                        Remote Port
-                    </Label>
+                    <Label Grid.Row="0" Grid.Column="0" Content="{x:Static lang:Resources.tunnel_remote_host}"/>
+                    <Label Grid.Row="0" Grid.Column="1" Margin="12,0,0,0" Content="{x:Static lang:Resources.tunnel_remote_port}"/>
                     <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding RemoteHost}" IsEnabled="{Binding CanEdit}" VerticalAlignment="Top"/>
                     <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding RemotePort}" IsEnabled="{Binding CanEdit}" Margin="12,0,0,0" Width="96" KeyDown="HandlePortInput"/>
                 </Grid>
                 <Panel Margin="0, 12">
                     <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Left">
-                        <controls:IconButton Icon="&#xE4E9;" Content="Save profile" Command="{Binding SaveConfigCommand}"/>
-                        <controls:IconButton Icon="&#xE28E;" ToolTip.Tip="Clear all" Command="{Binding ClearCommand}" IsEnabled="{Binding CanEdit}"/>
-                        <controls:IconButton Icon="&#xE244;" ToolTip.Tip="Preferences" Command="{Binding OpenPreferences}"/>
+                        <controls:IconButton Icon="&#xE4E9;" Content="profile_save" Command="{Binding SaveConfigCommand}"/>
+                        <controls:IconButton Icon="&#xE28E;" ToolTip.Tip="{x:Static lang:Resources.profiles_clear}" Command="{Binding ClearCommand}" IsEnabled="{Binding CanEdit}"/>
                     </StackPanel>
-                    <ComboBox Items="{Binding ProfileItems}" HorizontalAlignment="Right"/>
+                    <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Right">
+                        <controls:IconButton Icon="&#xE244;" ToolTip.Tip="{x:Static lang:Resources.other_preferences}" Command="{Binding OpenPreferences}"/>
+                        <ComboBox Items="{Binding ProfileItems}" ToolTip.Tip="{x:Static lang:Resources.profiles_rightclick}" ToolTip.ShowDelay="30" SelectedIndex="0">
+                            <ComboBox.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="{x:Static lang:Resources.profiles_add}">
+                                        <MenuItem.Icon>
+                                            <TextBlock FontFamily="{StaticResource Lucide}" Text="&#xE13F;" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                    <MenuItem Header="{x:Static lang:Resources.profiles_remove}">
+                                        <MenuItem.Icon>
+                                            <TextBlock FontFamily="{StaticResource Lucide}" Text="&#xE18B;" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </MenuItem.Icon>
+                                    </MenuItem>
+                                </ContextMenu>
+                            </ComboBox.ContextMenu>
+                        </ComboBox>
+                    </StackPanel>
                 </Panel>
             </StackPanel>
         </Panel>

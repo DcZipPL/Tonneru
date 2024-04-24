@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.IO;
 using System.Reactive;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace Tonneru.ViewModels
 		private const uint COLLAPSED_HEIGHT = 80;
 		
 		private SshClient? client;
-		private ForwardedPortRemote portForwarder;
+		private ForwardedPortRemote? portForwarder;
 		private bool forceDisconnect = false;
 		private ConnectionStatus _status = ConnectionStatus.Disconnect;
 		private uint _height = COLLAPSED_HEIGHT;

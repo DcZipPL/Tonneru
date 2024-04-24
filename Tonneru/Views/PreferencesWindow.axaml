@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:Tonneru.ViewModels"
         xmlns:controls="clr-namespace:Tonneru.Views.Controls"
+        xmlns:lang="clr-namespace:Tonneru.Assets"
         mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="350"
         x:Class="Tonneru.Views.PreferencesWindow"
         Icon="/Assets/tunnel.ico"
@@ -15,22 +16,36 @@
         
         <Panel Margin="12">
                 <StackPanel>
-                        <Label Target="LanguageBox" Content="Language"/>
-                        <ComboBox x:Name="LanguageBox" PlaceholderText="Language" PlaceholderForeground="#888"/>
-                        <Label Target="ThemeBox" Content="Theme" Margin="0,12, 0, 0" IsEnabled="False"/>
-                        <ComboBox x:Name="ThemeBox" PlaceholderText="Theme" PlaceholderForeground="#888" IsEnabled="False"/>
+                        <Label Target="LanguageBox" Content="{x:Static lang:Resources.preferences_language}"/>
+                        <ComboBox x:Name="LanguageBox" PlaceholderText="{x:Static lang:Resources.preferences_language}" PlaceholderForeground="#888"
+                                  Items="{Binding Cultures}"
+                                  SelectedItem="{Binding SelectedCulture}"
+                                  PropertyChanged="ChangeLanguage">
+                                <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                                <TextBlock>
+                                                        <TextBlock.Text>
+                                                                <Binding Path="DisplayName"/>
+                                                        </TextBlock.Text>
+                                                </TextBlock>
+                                        </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        <Label Target="ThemeBox" Content="{x:Static lang:Resources.preferences_theme}" Margin="0,12, 0, 0" IsEnabled="False"/>
+                        <ComboBox x:Name="ThemeBox" PlaceholderText="{x:Static lang:Resources.preferences_theme}" PlaceholderForeground="#888" IsEnabled="False"/>
                 </StackPanel>
                 <StackPanel VerticalAlignment="Bottom" Spacing="6">
                         <StackPanel Orientation="Horizontal" Margin="0, 0, 0, 12">
                                 <TextBlock FontFamily="{StaticResource Lucide}" Text="&#xE097;" Margin="0, 0, 6, 0"/>
-                                <controls:Hyperlink Link="https://ko-fi.com/prefexdev">
-                                        Support me on Ko-fi
-                                </controls:Hyperlink>
+                                <controls:Hyperlink Link="https://ko-fi.com/prefexdev" Content="{x:Static lang:Resources.preferences_donate}"/>
                         </StackPanel>
-                        <controls:Hyperlink Content="Report an issue" Link="https://github.com/DcZipPL/Tonneru/issues"/>
-                        <controls:Hyperlink Content="View source code on GitHub" Link="https://github.com/DcZipPL/Tonneru"/>
-                        <controls:Hyperlink Content="See more of my software on prefex.dev" Link="https://prefex.dev/"/>
-                        <TextBlock>Prefex .DEV © 2024</TextBlock>
+                        <controls:Hyperlink Content="{x:Static lang:Resources.preferences_issue}" Link="https://github.com/DcZipPL/Tonneru/issues"/>
+                        <controls:Hyperlink Content="{x:Static lang:Resources.preferences_github}" Link="https://github.com/DcZipPL/Tonneru"/>
+                        <controls:Hyperlink Content="{x:Static lang:Resources.preferences_more}" Link="https://prefex.dev/"/>
+                        <StackPanel Orientation="Horizontal" Spacing="6" Margin="0, 12, 0, 0">
+                                <TextBlock>Prefex .DEV © 2024,</TextBlock>
+                                <controls:Hyperlink Content="{x:Static lang:Resources.preferences_license}" Link="https://github.com/DcZipPL/Tonneru/blob/master/LICENSE"/>
+                        </StackPanel>
                 </StackPanel>
         </Panel>
 </Window>

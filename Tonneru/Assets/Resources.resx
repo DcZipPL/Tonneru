@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="other.preferences" xml:space="preserve">
+        <value>Preferences</value>
+    </data>
+    <data name="preferences.donate" xml:space="preserve">
+        <value>Support me on Ko-fi</value>
+    </data>
+    <data name="preferences.github" xml:space="preserve">
+        <value>View source code on GitHub</value>
+    </data>
+    <data name="preferences.issue" xml:space="preserve">
+        <value>Report an issue</value>
+    </data>
+    <data name="preferences.language" xml:space="preserve">
+        <value>Language</value>
+    </data>
+    <data name="preferences.license" xml:space="preserve">
+        <value>MIT License</value>
+    </data>
+    <data name="preferences.more" xml:space="preserve">
+        <value>See more of my software on prefex.dev</value>
+    </data>
+    <data name="preferences.theme" xml:space="preserve">
+        <value>Theme</value>
+    </data>
+    <data name="profiles.add" xml:space="preserve">
+        <value>Add profile</value>
+    </data>
+    <data name="profiles.clear" xml:space="preserve">
+        <value>Clear all</value>
+    </data>
+    <data name="profiles.remove" xml:space="preserve">
+        <value>Remove profile</value>
+    </data>
+    <data name="profiles.rightclick" xml:space="preserve">
+        <value>Right-Click to create or delete profiles</value>
+    </data>
+    <data name="profiles.save" xml:space="preserve">
+        <value>Save profile</value>
+    </data>
+    <data name="status.active" xml:space="preserve">
+        <value>Active</value>
+    </data>
+    <data name="status.connecting" xml:space="preserve">
+        <value>Connecting...</value>
+    </data>
+    <data name="status.disconnected" xml:space="preserve">
+        <value>Disconnected</value>
+    </data>
+    <data name="status.error" xml:space="preserve">
+        <value>Error</value>
+    </data>
+    <data name="status.waiting" xml:space="preserve">
+        <value>Waiting...</value>
+    </data>
+    <data name="tunnel.host" xml:space="preserve">
+        <value>Host</value>
+    </data>
+    <data name="tunnel.local.host" xml:space="preserve">
+        <value>Local host</value>
+    </data>
+    <data name="tunnel.local.port" xml:space="preserve">
+        <value>Local port</value>
+    </data>
+    <data name="tunnel.password" xml:space="preserve">
+        <value>Password</value>
+    </data>
+    <data name="tunnel.port" xml:space="preserve">
+        <value>Port</value>
+    </data>
+    <data name="tunnel.remote.host" xml:space="preserve">
+        <value>Remote host</value>
+    </data>
+    <data name="tunnel.remote.port" xml:space="preserve">
+        <value>Remote port</value>
+    </data>
+    <data name="tunnel.username" xml:space="preserve">
+        <value>Username</value>
+    </data>
+</root>
