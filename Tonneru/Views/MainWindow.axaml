@@ -99,12 +99,12 @@
                 </Grid>
                 <Panel Margin="0, 12">
                     <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Left">
-                        <controls:IconButton Icon="&#xE4E9;" Content="profile_save" Command="{Binding SaveConfigCommand}"/>
-                        <controls:IconButton Icon="&#xE28E;" ToolTip.Tip="{x:Static lang:Resources.profiles_clear}" Command="{Binding ClearCommand}" IsEnabled="{Binding CanEdit}"/>
+                        <controls:IconButton IsVisible="False" Icon="&#xE4E9;" Content="{x:Static lang:Resources.profiles_save}" Command="{Binding SaveConfigCommand}"/>
+                        <controls:IconButton Content="{x:Static lang:Resources.profiles_clear}" Icon="&#xE28E;" ToolTip.Tip="{x:Static lang:Resources.profiles_clear}" Command="{Binding ClearCommand}" IsEnabled="{Binding CanEdit}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Right">
                         <controls:IconButton Icon="&#xE244;" ToolTip.Tip="{x:Static lang:Resources.other_preferences}" Command="{Binding OpenPreferences}"/>
-                        <ComboBox Items="{Binding ProfileItems}" ToolTip.Tip="{x:Static lang:Resources.profiles_rightclick}" ToolTip.ShowDelay="30" SelectedIndex="0">
+                        <ComboBox IsVisible="False" Items="{Binding ProfileItems}" ToolTip.Tip="{x:Static lang:Resources.profiles_rightclick}" ToolTip.ShowDelay="30" SelectedIndex="0">
                             <ComboBox.ContextMenu>
                                 <ContextMenu>
                                     <MenuItem Header="{x:Static lang:Resources.profiles_add}">
