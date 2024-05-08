@@ -108,18 +108,18 @@ namespace Tonneru.ViewModels
 			_ => Brushes.Black
 		};
 
-		public object ConnectText
+		public object? ConnectText
 		{
 			get
 			{
 				return Status switch
 				{
-					ConnectionStatus.Disconnect => "Connect",
-					ConnectionStatus.Connecting => "Force Disconnect",
-					ConnectionStatus.Waiting => "Disconnect",
-					ConnectionStatus.Active => "Disconnect",
-					ConnectionStatus.Error => "Reconnect",
-					_ => "Unknown"
+					ConnectionStatus.Disconnect => Assets.Resources.ResourceManager.GetString("button.connect"),
+					ConnectionStatus.Connecting => Assets.Resources.ResourceManager.GetString("button.force_disconnect"),
+					ConnectionStatus.Waiting => Assets.Resources.ResourceManager.GetString("button.disconnect"),
+					ConnectionStatus.Active => Assets.Resources.ResourceManager.GetString("button.disconnect"),
+					ConnectionStatus.Error => Assets.Resources.ResourceManager.GetString("button.reconnect"),
+					_ => "«Unknown»"
 				};
 			}
 		}

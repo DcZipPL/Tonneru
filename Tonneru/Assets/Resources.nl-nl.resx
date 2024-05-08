@@ -14,4 +14,43 @@
     <data name="preferences.language" xml:space="preserve">
         <value>Taal</value>
     </data>
+    <data name="button.connect" xml:space="preserve">
+        <value>Verbind</value>
+    </data>
+    <data name="tunnel.username" xml:space="preserve">
+        <value>Gebruikersnaam</value>
+    </data>
+    <data name="tunnel.port" xml:space="preserve">
+        <value>Poort</value>
+    </data>
+    <data name="tunnel.password" xml:space="preserve">
+        <value>Wachtwoord</value>
+    </data>
+    <data name="tunnel.local.host" xml:space="preserve">
+        <value>Lokaale host</value>
+    </data>
+    <data name="tunnel.local.port" xml:space="preserve">
+        <value>Lokaale poort</value>
+    </data>
+    <data name="tunnel.host" xml:space="preserve">
+        <value>Host</value>
+    </data>
+    <data name="status.waiting" xml:space="preserve">
+        <value>Wachten...</value>
+    </data>
+    <data name="status.error" xml:space="preserve">
+        <value>Fout</value>
+    </data>
+    <data name="status.connecting" xml:space="preserve">
+        <value>Verbinden...</value>
+    </data>
+    <data name="status.active" xml:space="preserve">
+        <value>Actief</value>
+    </data>
+    <data name="profiles.save" xml:space="preserve">
+        <value>Profiel opslagen</value>
+    </data>
+    <data name="profiles.add" xml:space="preserve">
+        <value>Voeg profiel toe</value>
+    </data>
 </root>

@@ -34,11 +34,8 @@
         <PackageReference Include="XamlNameReferenceGenerator" Version="1.3.4"/>
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Assets\Language\" />
-    </ItemGroup>
-    <ItemGroup>
       <EmbeddedResource Update="Included\Resources.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
+        <Generator>PublicResXFileCodeGenerator</Generator>
         <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       </EmbeddedResource>
       <EmbeddedResource Update="Assets\Resources.resx">

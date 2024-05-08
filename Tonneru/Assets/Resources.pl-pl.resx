@@ -11,14 +11,26 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
+    <data name="button.connect" xml:space="preserve">
+        <value>Połącz</value>
+    </data>
+    <data name="button.disconnect" xml:space="preserve">
+        <value>Rozłącz</value>
+    </data>
+    <data name="button.force_disconnect" xml:space="preserve">
+        <value>Wymuś Rozłączenie</value>
+    </data>
+    <data name="button.reconnect" xml:space="preserve">
+        <value>Połącz Ponownie</value>
+    </data>
     <data name="other.preferences" xml:space="preserve">
         <value>Preferencje</value>
     </data>
     <data name="preferences.donate" xml:space="preserve">
-        <value>Wesprzyj mnie na Ko-fi</value>
+        <value>Wspomóż mnie na Ko-Fi</value>
     </data>
     <data name="preferences.github" xml:space="preserve">
-        <value>Zobacz kod źródłowy na Github</value>
+        <value>Zobacz kod źródłowy na GitHubie</value>
     </data>
     <data name="preferences.issue" xml:space="preserve">
         <value>Zgłoś błąd</value>
@@ -30,7 +42,7 @@
         <value>Licencja MIT</value>
     </data>
     <data name="preferences.more" xml:space="preserve">
-        <value>Sprawdź więcej mojego oprogramowania na prefex.dev</value>
+        <value>Zobacz więcej mojego oprogramowania na prefex.dev</value>
     </data>
     <data name="preferences.theme" xml:space="preserve">
         <value>Motyw</value>
@@ -45,7 +57,7 @@
         <value>Usuń profil</value>
     </data>
     <data name="profiles.rightclick" xml:space="preserve">
-        <value>Kliknij prawym przyciskiem myszy żeby dodać lub usunąć profil</value>
+        <value>Prawy Przyscisk Myszy żeby utworzyć czy usunąć profile</value>
     </data>
     <data name="profiles.save" xml:space="preserve">
         <value>Zapisz profil</value>
@@ -54,7 +66,7 @@
         <value>Aktywny</value>
     </data>
     <data name="status.connecting" xml:space="preserve">
-        <value>Łączenie...</value>
+        <value>Łączenie</value>
     </data>
     <data name="status.disconnected" xml:space="preserve">
         <value>Rozłączono</value>
@@ -84,7 +96,7 @@
         <value>Źródło zewnętrzne</value>
     </data>
     <data name="tunnel.remote.port" xml:space="preserve">
-        <value>Port zewnętzny</value>
+        <value>Port zewnętrzny</value>
     </data>
     <data name="tunnel.username" xml:space="preserve">
         <value>Nazwa użytkownika</value>

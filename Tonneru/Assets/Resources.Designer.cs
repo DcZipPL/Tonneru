@@ -28,7 +28,7 @@ namespace Tonneru.Assets {
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        public Resources() {
         }
         
         /// <summary>
@@ -56,6 +56,42 @@ namespace Tonneru.Assets {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connect.
+        /// </summary>
+        public static string button_connect {
+            get {
+                return ResourceManager.GetString("button.connect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Disconnect.
+        /// </summary>
+        public static string button_disconnect {
+            get {
+                return ResourceManager.GetString("button.disconnect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Force Disconnect.
+        /// </summary>
+        public static string button_force_disconnect {
+            get {
+                return ResourceManager.GetString("button.force_disconnect", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reconnect.
+        /// </summary>
+        public static string button_reconnect {
+            get {
+                return ResourceManager.GetString("button.reconnect", resourceCulture);
             }
         }
         

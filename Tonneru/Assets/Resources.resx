@@ -18,6 +18,18 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
+    <data name="button.connect" xml:space="preserve">
+        <value>Connect</value>
+    </data>
+    <data name="button.disconnect" xml:space="preserve">
+        <value>Disconnect</value>
+    </data>
+    <data name="button.force_disconnect" xml:space="preserve">
+        <value>Force Disconnect</value>
+    </data>
+    <data name="button.reconnect" xml:space="preserve">
+        <value>Reconnect</value>
+    </data>
     <data name="other.preferences" xml:space="preserve">
         <value>Preferences</value>
     </data>
