@@ -13,9 +13,9 @@ public class PreferencesWindowViewModel : ViewModelBase
 		SelectedCulture = Assets.Resources.Culture;
 	}
 	
-	public CultureInfo _selectedCulture;
+	private CultureInfo? _selectedCulture;
 	
-	public CultureInfo SelectedCulture
+	public CultureInfo? SelectedCulture
 	{
 		get => _selectedCulture;
 		set => this.RaiseAndSetIfChanged(ref _selectedCulture, value);
@@ -28,6 +28,8 @@ public class PreferencesWindowViewModel : ViewModelBase
 	
 	public void ApplyCulture()
 	{
+		if (SelectedCulture == null)
+			return;
 		Assets.Resources.Culture = SelectedCulture;
 		CultureInfo.CurrentCulture = SelectedCulture;
 		CultureInfo.CurrentUICulture = SelectedCulture;
