@@ -17,7 +17,7 @@ namespace Tonneru.ViewModels
 {
 	public class MainWindowViewModel : ViewModelBase
 	{
-		private const uint OPEN_HEIGHT = 436;
+		private const uint OPEN_HEIGHT = 466;
 		private const uint COLLAPSED_HEIGHT = 80;
 		
 		private SshClient? client;
@@ -78,6 +78,8 @@ namespace Tonneru.ViewModels
 			ToggleEditCommand = ReactiveCommand.Create(ToggleEdit);
 			SaveConfigCommand = ReactiveCommand.Create(SaveConfig);
 			ClearCommand = ReactiveCommand.Create(Clear);
+			
+			UsePublicKeyChecked(); // Refresh the password text
 		}
 		
 		public bool CanEdit => Status == ConnectionStatus.Disconnect || Status == ConnectionStatus.Error;
@@ -336,11 +338,22 @@ namespace Tonneru.ViewModels
 			get => _remotePort;
 			set => this.RaiseAndSetIfChanged(ref _remotePort, value);
 		}
-
+		
 		public ComboBoxItem[] ProfileItems => new[]
 		{
-			new ComboBoxItem() { Content = "Profile 1" },
+			new ComboBoxItem { Content = "Profile 1" }
 		};
+
+		public string PasswordText { get; set; }
+		public bool IsPublicKey { set; get; }
+		public string PasswordChar => IsPublicKey ? "" : "•";
+
+		public void UsePublicKeyChecked()
+		{
+			PasswordText = Assets.Resources.ResourceManager.GetString(IsPublicKey ? "tunnel.public_key" : "tunnel.password") ?? "tunnel.password";
+			this.RaisePropertyChanged(nameof(PasswordText));
+			this.RaisePropertyChanged(nameof(PasswordChar));
+		}
 
 		public void OpenPreferences() => PreferencesWindow.OpenPreferences();
 	}

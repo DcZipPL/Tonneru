@@ -101,4 +101,7 @@
     <data name="tunnel.username" xml:space="preserve">
         <value>Nazwa użytkownika</value>
     </data>
+    <data name="tunnel.public_key" xml:space="preserve">
+        <value>Klucz Publiczny</value>
+    </data>
 </root>

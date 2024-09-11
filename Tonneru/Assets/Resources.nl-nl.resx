@@ -53,4 +53,7 @@
     <data name="profiles.add" xml:space="preserve">
         <value>Voeg profiel toe</value>
     </data>
+    <data name="tunnel.public_key" xml:space="preserve">
+        <value>Publieke Sleutel</value>
+    </data>
 </root>

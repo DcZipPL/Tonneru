@@ -8,7 +8,7 @@
         mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="180"
         x:Class="Tonneru.Views.MainWindow"
         Icon="/Assets/tunnel.ico"
-        Title="Tonneru" Width="{Binding Width}" Height="{Binding Height}" MaxHeight="436" MinHeight="80">
+        Title="Tonneru" Width="{Binding Width}" Height="{Binding Height}" MaxHeight="466" MinHeight="80">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
@@ -63,11 +63,13 @@
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
                     <Label Grid.Row="0" Grid.Column="0" Content="{x:Static lang:Resources.tunnel_username}"/>
-                    <Label Grid.Row="0" Grid.Column="1" Margin="12,0,0,0" Content="{x:Static lang:Resources.tunnel_password}"/>
+                    <Label Grid.Row="0" Grid.Column="1" Margin="12,0,0,0" Content="{Binding PasswordText}"/>
                     <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding Username}" IsEnabled="{Binding CanEdit}"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Password}" IsEnabled="{Binding CanEdit}" Margin="12,0,0,0" PasswordChar="•"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Password}" IsEnabled="{Binding CanEdit}" Margin="12,0,0,0" PasswordChar="{Binding PasswordChar}"/>
+                    <CheckBox Grid.ColumnSpan="1" Grid.Row="2" Content="Use public key" Command="{Binding UsePublicKeyChecked}" IsChecked="{Binding IsPublicKey}" />
                 </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
